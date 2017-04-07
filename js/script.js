@@ -6,7 +6,15 @@ let blondieMusic = document.querySelector('#blondie-music');
 let carImg = document.querySelector('.car');
 let tickleSound = document.querySelector('#tickle-sound');
 let spiderManImg = document.querySelector('.spiderman');
+let spiderman = document.querySelector('.spiderman-top');
+let shootBtn = document.querySelector('.shoot-btn');
+let boomBtn = document.querySelector('.boom-btn');
+let gunFlagOut = document.querySelector('.gunflag');
+let flagImg = document.querySelector('#flag');
 
+shootBtn.classList.add('hidden');
+boomBtn.classList.add('hidden');
+gunFlagOut.classList.add('hidden');
 
 deadpool.classList.add('hidden');
 deadpool.classList.add('jump-bg');
@@ -42,7 +50,7 @@ function manholeMoving(){
         deadpool.classList.add('translate5vw');
         setTimeout(function(){
             spiderManImg.classList.add('spidermanpeaks');
-        }, 3000);
+        }, 2000);
     };
 };
 
@@ -56,6 +64,24 @@ function dpTickleRemove(){
     deadpool.classList.remove('tickle');
 };
 
+spiderManImg.addEventListener('animationend', spidermanFromTop);
+function spidermanFromTop(){
+    setTimeout(function(){
+        spiderman.classList.add('slidedown')}, 1500);
+        spiderman.addEventListener('animationend', spidermanChangeBg);
+        function spidermanChangeBg(){
+            spiderman.classList.add('smchangebg');
+            spiderman.classList.remove('slidedown');
+            shootBtn.classList.remove('hidden');
+            boomBtn.classList.remove('hidden');
+        };
+};
 
-
-
+shootBtn.addEventListener('click', shotEvent);
+function shotEvent(){
+    gunFlagOut.classList.remove('hidden');
+    deadpool.classList.add('shootbg');
+    setTimeout(function(){
+        flagImg.classList.add('flagmove');
+    }, 500);
+};

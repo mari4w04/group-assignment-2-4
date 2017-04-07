@@ -35,6 +35,9 @@ body{
 .jump-bg{
     background-color: red !important;
 }
+.shootbg{
+    background-color: aliceblue !important;
+}
 .jump{
     animation: deadpooljump 1s ease-in-out;
 }
@@ -54,7 +57,8 @@ body{
 .car{
     height: 300px;
     width: 500px;
-    background-color: green;
+    background-image: url(../img/cow.png);
+    background-size: contain;
     position: absolute;
     left: -33vw;
     bottom: 15vh;
@@ -229,4 +233,55 @@ body{
     bottom: 8vw;
     position: absolute;
     left: -200px;
+}
+.spiderman-top{
+    height: 300px;
+    width: 200px;
+    position: absolute;
+    top: -300px;
+    background-color: aquamarine;
+    left: 100px;
+}
+.slidedown{
+    animation: slidedown 1s forwards;
+}
+@keyframes slidedown{
+    to{
+        transform: translateY(500px);
+    }
+}
+.smchangebg{
+    background-color: bisque !important;
+    transform: translateY(670px) !important;
+}
+.btn-container{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 5vh;
+}
+.gunflag{
+    overflow: hidden;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    bottom: 60px;
+    position: absolute;
+    right: 538px;
+}
+#flag{
+    transform: translate(51px);
+    height: 20px;
+    width: auto;
+}
+.flagmove{
+    animation: flagmove 1s forwards;
+}
+@keyframes flagmove{
+    to{
+        transform: translate(-5px);
+    }
 }

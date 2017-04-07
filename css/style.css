@@ -2,9 +2,231 @@ body{
     margin: 0;
     padding: 0;
 }
+.hidden{
+    display: none;
+}
 .main-container{
-    background-image: url('../img/bg.jpg');
+    background-image: url('../img/bg-wall-long.jpg');
     height: 100vh;
     width: 100vw;
     background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.manhole-top{
+    background-image: url(../img/manhole-top.png);
+    height: 40px;
+    width: 167px;
+    background-repeat: no-repeat;
+    bottom: 60px;
+    position: absolute;
+    right: 488px;
+    background-size: contain;
+    cursor: pointer;
+}
+.deadpool{
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    bottom: 60px;
+    position: absolute;
+    right: 488px;
+}
+.jump-bg{
+    background-color: red !important;
+}
+.jump{
+    animation: deadpooljump 1s ease-in-out;
+}
+@keyframes deadpooljump{
+    0%{
+        bottom: 60px;
+    }
+    50%{
+        bottom: 500px;
+        transform: rotate(1000deg);
+    }
+    100%{
+        bottom: 60px;
+        transform: translate(5vw);
+    }
+}
+.car{
+    height: 300px;
+    width: 500px;
+    background-color: green;
+    position: absolute;
+    left: -33vw;
+    bottom: 15vh;
+}
+.carthrow{
+    animation: carthrow 2s linear forwards;
+}
+@keyframes carthrow{
+    0%{
+        left: -33vw;
+        bottom: 20vh;
+    }
+    10%{
+        left: 10vw;
+        bottom: 50vh;
+        /*transform: rotate(90deg)*/
+    }
+    20%{
+        left: 20vw;
+        bottom: 70vh;
+        /*transform: rotate(180deg)*/
+    }
+    30%{
+        left: 30vw;
+        bottom: 50vh;
+        /*transform: rotate(270deg)*/
+    }
+    40%{
+        left: 40vw;
+        bottom: 20vh;
+        /*transform: rotate(360deg)*/
+    }
+    50%{
+        left: 50vw;
+        bottom: 50vh;
+        /*transform: rotate(450deg)*/
+    }
+    60%{
+        left: 60vw;
+        bottom: 70vh;
+        /*transform: rotate(540deg)*/
+    }
+    70%{
+        left: 70vw;
+        bottom: 50vh;
+        /*transform: rotate(630deg)*/
+    }
+    80%{
+        left: 80vw;
+        bottom: 20vh;
+        /*transform: rotate(720deg)*/
+    }
+    85%{
+        left: 90vw;
+        bottom: 50vh;
+        /*transform: rotate(810deg)*/
+    }
+    100%{
+        left: 100vw;
+        bottom: 70vh;
+        transform: rotate(1000deg);
+    }
+}
+.wiggle{
+    animation: wiggle 1s linear;
+}
+@keyframes wiggle{
+    0%{
+        transform: rotate(0deg);
+    }
+    10%{
+        transform: rotate(-10deg);
+    }
+    20%{
+        transform: rotate(10deg);
+    }
+    30%{
+        transform: rotate(-10deg);
+    }
+    40%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    60%{
+        transform: rotate(10deg);
+    }
+    70%{
+        transform: rotate(-10deg);
+    }
+    80%{
+        transform: rotate(10deg);
+    }
+    90%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.movemanhole{
+    animation: movemanhole 1s forwards;
+}
+@keyframes movemanhole{
+    to{
+        transform: translate(-10vw);
+    }
+}
+.tickle{
+    animation: tickle 1s forwards;
+}
+@keyframes tickle{
+    0%{
+        transform: rotate(0deg) translate(5vw);
+    }
+    10%{
+        transform: rotate(-10deg) translate(5vw);
+    }
+    20%{
+        transform: rotate(10deg) translate(5vw);
+    }
+    30%{
+        transform: rotate(-10deg) translate(5vw);
+    }
+    40%{
+        transform: rotate(10deg) translate(5vw);
+    }
+    50%{
+        transform: rotate(-10deg) translate(5vw);
+    }
+    60%{
+        transform: rotate(10deg) translate(5vw);
+    }
+    70%{
+        transform: rotate(-10deg) translate(5vw);
+    }
+    80%{
+        transform: rotate(10deg) translate(5vw);
+    }
+    90%{
+        transform: rotate(-10deg) translate(5vw);
+    }
+    100%{
+        transform: rotate(0deg) translate(5vw);
+    }
+}
+.translate5vw{
+    transform: translate(5vw);
+}
+.spidermanpeaks{
+    animation: peak 1s;
+}
+@keyframes peak{
+    0%{
+        transform: rotate(0deg);
+    }
+    60%{
+        transform: rotate(45deg);
+    }
+    80%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.spiderman{
+    height: 300px;
+    width: 200px;
+    background-color: aqua;
+    bottom: 8vw;
+    position: absolute;
+    left: -200px;
 }

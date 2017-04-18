@@ -1,17 +1,18 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #282828;
 }
 .hidden{
     display: none;
 }
 .main-container{
-    background-image: url('../img/bg-wall-long.jpg');
+    background-image: url(../img/bg-sprite.jpg);
     height: 100vh;
-    width: 100vw;
+    width: 1400px;
     background-size: cover;
     overflow: hidden;
-    position: relative;
+    margin: auto;
 }
 .manhole-top{
     background-image: url(../img/manhole-top.png);
@@ -283,5 +284,145 @@ body{
 @keyframes flagmove{
     to{
         transform: translate(-5px);
+    }
+}
+/*svg{
+    max-width: 50vw;
+    height: auto;
+}
+.path-1{
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    fill: none;
+    animation: draw 1s infinite;
+    fill: #D11818;
+    opacity: .7;
+}
+@keyframes draw{
+    to{
+        stroke-dashoffset: 0;
+    }
+}*/
+
+.title-text{
+    opacity: .9;
+    position: absolute;
+    top: 105px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 0;
+}
+.spraycan{
+    position: absolute;
+    z-index: 4;
+    top: 298px;
+    left: 942px;
+    opacity: .7;
+}
+.cloud1, .cloud2, .cloud3, .cloud4{
+    position: absolute;
+}
+.cloud1{
+    top: 53px;
+    left: 670px;
+    height: 260px;
+    width: auto;
+    z-index: 3;
+}
+.cloud2{
+    top: 68px;
+    left: 410px;
+    height: 240px;
+    width: auto;
+    z-index: 2;
+}
+.cloud3{
+    top: 214px;
+    left: 700px;
+    height: 200px;
+    width: auto;
+    z-index: 3;
+}
+.cloud4{
+    top: 215px;
+    left: 461px;
+    height: 226px;
+    width: auto;
+    z-index: 3;
+}
+.wiggle1{
+    animation: wiggle1 3s forwards;
+}
+@keyframes wiggle1{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-10deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    75%{
+        transform: rotate(-10deg);
+        opacity: .9;
+    }
+    99%{
+        transform: rotate(0deg);
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+.wiggle2{
+    animation: wiggle2 3s forwards;
+}
+@keyframes wiggle2{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    75%{
+        transform: rotate(10deg);
+        opacity: .9;
+    }
+    99%{
+        transform: rotate(0deg);
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+.spray{
+    animation: spray 3s forwards;
+}
+@keyframes spray{
+    0%{
+        top: 348px;
+        left: 942px;
+    }
+    25%{
+        top: 273px;
+        left: 442px;
+    }
+    50%{
+        top: 198px;
+        left: 942px;
+    }
+    75%{
+        top: 133px;
+        left: 442px;
+    }
+    100%{
+        top: 55px;
+        left: 942px;
     }
 }

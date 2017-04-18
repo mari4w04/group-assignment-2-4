@@ -15,6 +15,7 @@ let flagImg = document.querySelector('#flag');
 shootBtn.classList.add('hidden');
 boomBtn.classList.add('hidden');
 gunFlagOut.classList.add('hidden');
+manholeImg.classList.add('hidden');
 
 deadpool.classList.add('hidden');
 deadpool.classList.add('jump-bg');

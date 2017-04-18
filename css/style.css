@@ -71,6 +71,27 @@ color: aqua
         transform: translate(5vw);
     }
 }
+
+.zoomselfie {
+animation: deadpoolselfie 1s forwards;
+}
+@keyframes deadpoolselfie{
+    to{
+    transform: scale(4)
+    };
+}
+.zoomselfiedone {
+animation: selfiedone 1s;
+}
+@keyframes selfiedone{
+    0%{
+    transform: scale(4)
+    };
+    100%{
+    transform: scale(1)
+    };
+}
+
 .car{
     height: 300px;
     width: 500px;

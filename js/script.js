@@ -16,7 +16,8 @@ let bombSound = document.querySelector('#grenade-explosion')
 let bombClock = document.querySelector('#bomb-beep');
 let everything = document.querySelector('.main-container');
 let credits = document. querySelector('.finalCredits');
-
+let graffitybtn = document.querySelector('.graffity');
+let selfieFinshed = document.querySelector('.finished-selfie')
 
 
 explosionVideo.classList.add('hidden');
@@ -47,6 +48,7 @@ function carFly(){
 
 };
 
+
 manholeImg.addEventListener('click', manholeMoving);
 function manholeMoving(){
     manholeSound.play();
@@ -73,6 +75,18 @@ deadpool.addEventListener('mouseout', dpTickleRemove);
 function dpTickleRemove(){
     deadpool.classList.remove('tickle');
 };
+
+
+
+graffitybtn.addEventListener('click', selfieZoom);
+function selfieZoom () {
+    deadpool.classList.add('zoomselfie')
+}
+selfieFinshed.addEventListener('click', backFromSelfie);
+function backFromSelfie () {
+    deadpool.classList.remove('zoomselfie')
+deadpool.classList.addzoomselfiedone');
+}
 
 spiderManImg.addEventListener('animationend', spidermanFromTop);
 function spidermanFromTop(){

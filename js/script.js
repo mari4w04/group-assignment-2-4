@@ -11,11 +11,16 @@ let shootBtn = document.querySelector('.shoot-btn');
 let boomBtn = document.querySelector('.boom-btn');
 let gunFlagOut = document.querySelector('.gunflag');
 let flagImg = document.querySelector('#flag');
+let explosionVideo = document.querySelector('.explosion');
+let bombSound = document.querySelector('#grenade-explosion')
+let bombClock = document.querySelector('#bomb-beep');
 
+
+explosionVideo.classList.add('hidden');
 shootBtn.classList.add('hidden');
 boomBtn.classList.add('hidden');
 gunFlagOut.classList.add('hidden');
-manholeImg.classList.add('hidden');
+/*manholeImg.classList.add('hidden');*/
 
 deadpool.classList.add('hidden');
 deadpool.classList.add('jump-bg');
@@ -85,4 +90,15 @@ function shotEvent(){
     setTimeout(function(){
         flagImg.classList.add('flagmove');
     }, 500);
+};
+
+boomBtn.addEventListener('click', explosionEvent);
+function explosionEvent(){
+    bombClock.play();
+};
+
+bombClock.addEventListener('ended', explosionStarts);
+function explosionStarts() {
+bombSound.play();
+    explosionVideo.classList.remove('hidden');
 };

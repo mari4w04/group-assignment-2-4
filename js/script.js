@@ -4,7 +4,7 @@ let deadpool= document.querySelector(".deadpool");
 let evilLaugh = document.querySelector('#evil-laugh');
 let blondieMusic = document.querySelector('#blondie-music');
 let carImg = document.querySelector('.car');
-let tickleSound = document.querySelector('#tickle-sound');
+let tickleSound = document.querySelector('#woho-sound');
 let spiderManImg = document.querySelector('.spiderman');
 let spiderman = document.querySelector('.spiderman-top');
 let shootBtn = document.querySelector('.shoot-btn');
@@ -14,9 +14,13 @@ let flagImg = document.querySelector('#flag');
 let explosionVideo = document.querySelector('.explosion');
 let bombSound = document.querySelector('#grenade-explosion')
 let bombClock = document.querySelector('#bomb-beep');
+let everything = document.querySelector('.main-container');
+let credits = document. querySelector('.finalCredits');
+
 
 
 explosionVideo.classList.add('hidden');
+credits.classList.add('hidden');
 shootBtn.classList.add('hidden');
 boomBtn.classList.add('hidden');
 gunFlagOut.classList.add('hidden');
@@ -101,4 +105,9 @@ bombClock.addEventListener('ended', explosionStarts);
 function explosionStarts() {
 bombSound.play();
     explosionVideo.classList.remove('hidden');
+    everything.classList.add('hidden');
+setTimeout(function(){
+        credits.classList.remove('hidden')
+explosionVideo.classList.add('hidden');
+}, 5000);
 };

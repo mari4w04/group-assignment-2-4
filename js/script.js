@@ -11,26 +11,68 @@ let shootBtn = document.querySelector('.shoot-btn');
 let boomBtn = document.querySelector('.boom-btn');
 let gunFlagOut = document.querySelector('.gunflag');
 let flagImg = document.querySelector('#flag');
+let cloud1 = document.querySelector('.cloud1');
+let cloud2 = document.querySelector('.cloud2');
+let cloud3 = document.querySelector('.cloud3');
+let cloud4 = document.querySelector('.cloud4');
+let startBtn = document.querySelector('.start-btn');
+let mainContainer = document.querySelector('.main-container');
+let title = document.querySelector('.title');
+let startbutton = document.querySelector('.start-button');
 let explosionVideo = document.querySelector('.explosion');
 let bombSound = document.querySelector('#grenade-explosion')
 let bombClock = document.querySelector('#bomb-beep');
-let everything = document.querySelector('.main-container');
 let credits = document. querySelector('.finalCredits');
 let graffitybtn = document.querySelector('.graffity');
-let selfieFinshed = document.querySelector('.finished-selfie')
+let selfieFinshed = document.querySelector('.finished-selfie');
+let selfieBG = document.querySelector('.backgroundselfie');
 
-
+selfieBG.classList.add('hidden');
 explosionVideo.classList.add('hidden');
 credits.classList.add('hidden');
 shootBtn.classList.add('hidden');
 boomBtn.classList.add('hidden');
 gunFlagOut.classList.add('hidden');
-/*manholeImg.classList.add('hidden');*/
+manholeImg.classList.add('hidden');
 
 deadpool.classList.add('hidden');
 deadpool.classList.add('jump-bg');
 
-window.addEventListener('load', carFly);
+cloud1.addEventListener('animationend', hideClouds);
+function hideClouds(){
+    cloud1.classList.add('hidden');
+    cloud2.classList.add('hidden');
+    cloud3.classList.add('hidden');
+    cloud4.classList.add('hidden');
+    startBtn.classList.add('wiggle-btn');
+};
+
+startBtn.addEventListener('click', changeBg);
+function changeBg(){
+    mainContainer.classList.add('change-bg');
+    title.classList.add('fadeout');
+    startbutton.classList.add('fadeout');
+    title.addEventListener('animationend', function(){
+        title.classList.add('hidden');
+        startbutton.classList.add('hidden');
+        manholeImg.classList.remove('hidden');
+        evilLaugh.play();
+        evilLaugh.addEventListener('ended', startMusic);
+        function startMusic(){
+            blondieMusic.play();
+            carImg.classList.add('carthrow');
+        };
+        carImg.addEventListener('animationend', hideCar);
+        function hideCar(){
+            carImg.classList.add('hidden');
+            setTimeout(function(){
+               manholeImg.classList.add('wiggle');
+            }, 1000);
+        };
+    });
+};
+
+/*window.addEventListener('load', carFly);
 function carFly(){
     evilLaugh.play();
     evilLaugh.addEventListener('ended', startMusic);
@@ -46,7 +88,7 @@ function carFly(){
         }, 1000);
     };
 
-};
+};*/
 
 
 manholeImg.addEventListener('click', manholeMoving);
@@ -80,12 +122,13 @@ function dpTickleRemove(){
 
 graffitybtn.addEventListener('click', selfieZoom);
 function selfieZoom () {
-    deadpool.classList.add('zoomselfie')
+    selfieBG.classList.remove('hidden');
+    deadpool.classList.add('zoomselfie');
 }
 selfieFinshed.addEventListener('click', backFromSelfie);
 function backFromSelfie () {
     deadpool.classList.remove('zoomselfie')
-deadpool.classList.addzoomselfiedone');
+deadpool.classList.add('zoomselfiedone');
 }
 
 spiderManImg.addEventListener('animationend', spidermanFromTop);
@@ -119,7 +162,7 @@ bombClock.addEventListener('ended', explosionStarts);
 function explosionStarts() {
 bombSound.play();
     explosionVideo.classList.remove('hidden');
-    everything.classList.add('hidden');
+    mainContainer.classList.add('hidden');
 setTimeout(function(){
         credits.classList.remove('hidden')
 explosionVideo.classList.add('hidden');
